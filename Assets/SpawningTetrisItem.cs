@@ -9,7 +9,7 @@ public class SpawningTetrisItem : MonoBehaviour
     void Start()
     {
         int IndexOfItem = Random.Range(0, tetrisItem.Length);
-        tetrisItem[IndexOfItem].transform.GetChild(0).position = transform.position;
+        tetrisItem[IndexOfItem].transform.position = transform.position;
         Instantiate(tetrisItem[IndexOfItem]);
     }
 
