@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class TetrisItem : MonoBehaviour
+public class TetrisItemI : MonoBehaviour
 { 
     private bool following;
     private AudioSource clipToPlay;
@@ -18,6 +18,7 @@ public class TetrisItem : MonoBehaviour
   // Update is called once per frame
     void Update () 
     {
+        
         if(Input.GetMouseButton(0) && ((Camera.main.ScreenToWorldPoint(Input.mousePosition) - transform.position).magnitude <= offset))
         {
             clipToPlay.clip = click;
@@ -33,9 +34,7 @@ public class TetrisItem : MonoBehaviour
         }
         if (following)
         {
-        
             transform.position = Vector2.Lerp(transform.position, Camera.main.ScreenToWorldPoint(Input.mousePosition), 0.1f);
-        
-        }
-    }
+        }   
+    }    
 }
