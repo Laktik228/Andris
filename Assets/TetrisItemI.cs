@@ -19,7 +19,7 @@ public class TetrisItemI : MonoBehaviour
     void Update () 
     {
         
-        if(Input.GetMouseButton(0) && ((Camera.main.ScreenToWorldPoint(Input.mousePosition) - transform.position).magnitude <= offset))
+        if(Input.GetMouseButtonDown(0) && ((Camera.main.ScreenToWorldPoint(Input.mousePosition) - transform.position).magnitude <= offset))
         {
             clipToPlay.clip = click;
             clipToPlay.Play();
@@ -34,7 +34,18 @@ public class TetrisItemI : MonoBehaviour
         }
         if (following)
         {
+            foreach(Transform child in transform)
+            {
+                child.localScale = new Vector2(1.4f, 1.4f);
+            } 
             transform.position = Vector2.Lerp(transform.position, Camera.main.ScreenToWorldPoint(Input.mousePosition), 0.1f);
+        }
+        if(Input.GetMouseButtonUp(0))
+        {
+            foreach(Transform child in transform)
+            {
+                child.localScale = new Vector2(1f, 1f);
+            }
         }   
     }    
 }
