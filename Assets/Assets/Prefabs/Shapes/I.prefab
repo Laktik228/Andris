@@ -11,7 +11,8 @@ GameObject:
   - component: {fileID: 5999868509166255657}
   - component: {fileID: 2535833648900595494}
   - component: {fileID: 2250531718694454178}
-  - component: {fileID: 5891903869245265574}
+  - component: {fileID: 5963816381244339608}
+  - component: {fileID: 3520136372381805106}
   m_Layer: 0
   m_Name: Block
   m_TagString: Block
@@ -27,8 +28,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2233163684648286677}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -0.50899994, y: 0, z: 0}
-  m_LocalScale: {x: 0.38, y: 0.38, z: 0.38}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 0.38, y: 0.38, z: 0}
   m_Children: []
   m_Father: {fileID: 7698142975113839150}
   m_RootOrder: 3
@@ -98,7 +99,7 @@ MonoBehaviour:
   m_EffectColor: {r: 0, g: 0, b: 0, a: 0.5}
   m_EffectDistance: {x: 1, y: -1}
   m_UseGraphicAlpha: 1
---- !u!61 &5891903869245265574
+--- !u!61 &5963816381244339608
 BoxCollider2D:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -124,6 +125,27 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 2.56, y: 2.56}
   m_EdgeRadius: 0
+--- !u!50 &3520136372381805106
+Rigidbody2D:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2233163684648286677}
+  m_BodyType: 1
+  m_Simulated: 1
+  m_UseFullKinematicContacts: 0
+  m_UseAutoMass: 0
+  m_Mass: 1
+  m_LinearDrag: 0
+  m_AngularDrag: 0.05
+  m_GravityScale: 1
+  m_Material: {fileID: 0}
+  m_Interpolate: 0
+  m_SleepingMode: 1
+  m_CollisionDetection: 0
+  m_Constraints: 0
 --- !u!1 &6215874471247991004
 GameObject:
   m_ObjectHideFlags: 0
@@ -265,7 +287,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6a413e10ee831134a88a2d1af7f9c717, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  offset: 0.1
+  following: 0
+  offset: 0.05
   click: {fileID: 0}
 --- !u!1 &6390892442602597944
 GameObject:
@@ -291,7 +314,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 6390892442602597944}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: -0.5, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 6382423533668713144}
@@ -312,7 +335,8 @@ GameObject:
   - component: {fileID: 6382423533668713144}
   - component: {fileID: 4797392667521836284}
   - component: {fileID: 899906281935039225}
-  - component: {fileID: 5322981928104508321}
+  - component: {fileID: 666839335072706025}
+  - component: {fileID: 7508854769710676264}
   m_Layer: 0
   m_Name: Block
   m_TagString: Block
@@ -328,8 +352,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 7041709101175430774}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0.5109999, y: 0, z: 0}
-  m_LocalScale: {x: 0.38, y: 0.38, z: 0.38}
+  m_LocalPosition: {x: 1, y: 0, z: 0}
+  m_LocalScale: {x: 0.38, y: 0.38, z: 0}
   m_Children: []
   m_Father: {fileID: 7698142975113839150}
   m_RootOrder: 0
@@ -399,7 +423,7 @@ MonoBehaviour:
   m_EffectColor: {r: 0, g: 0, b: 0, a: 0.5}
   m_EffectDistance: {x: 1, y: -1}
   m_UseGraphicAlpha: 1
---- !u!61 &5322981928104508321
+--- !u!61 &666839335072706025
 BoxCollider2D:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -425,6 +449,27 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 2.56, y: 2.56}
   m_EdgeRadius: 0
+--- !u!50 &7508854769710676264
+Rigidbody2D:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7041709101175430774}
+  m_BodyType: 1
+  m_Simulated: 1
+  m_UseFullKinematicContacts: 0
+  m_UseAutoMass: 0
+  m_Mass: 1
+  m_LinearDrag: 0
+  m_AngularDrag: 0.05
+  m_GravityScale: 1
+  m_Material: {fileID: 0}
+  m_Interpolate: 0
+  m_SleepingMode: 1
+  m_CollisionDetection: 0
+  m_Constraints: 0
 --- !u!1 &7624072508120152408
 GameObject:
   m_ObjectHideFlags: 0
@@ -436,7 +481,8 @@ GameObject:
   - component: {fileID: 6759973163921308010}
   - component: {fileID: 5641124103970665620}
   - component: {fileID: 6008528401366994704}
-  - component: {fileID: 8855430749853374018}
+  - component: {fileID: 988594577137696444}
+  - component: {fileID: 1054689823618709835}
   m_Layer: 0
   m_Name: Block
   m_TagString: Block
@@ -452,8 +498,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 7624072508120152408}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -1.549, y: 0, z: 0}
-  m_LocalScale: {x: 0.38, y: 0.38, z: 0.38}
+  m_LocalPosition: {x: -1, y: 0, z: 0}
+  m_LocalScale: {x: 0.38, y: 0.38, z: 0}
   m_Children: []
   m_Father: {fileID: 7698142975113839150}
   m_RootOrder: 2
@@ -523,7 +569,7 @@ MonoBehaviour:
   m_EffectColor: {r: 0, g: 0, b: 0, a: 0.5}
   m_EffectDistance: {x: 1, y: -1}
   m_UseGraphicAlpha: 1
---- !u!61 &8855430749853374018
+--- !u!61 &988594577137696444
 BoxCollider2D:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -549,6 +595,27 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 2.56, y: 2.56}
   m_EdgeRadius: 0
+--- !u!50 &1054689823618709835
+Rigidbody2D:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7624072508120152408}
+  m_BodyType: 1
+  m_Simulated: 1
+  m_UseFullKinematicContacts: 0
+  m_UseAutoMass: 0
+  m_Mass: 1
+  m_LinearDrag: 0
+  m_AngularDrag: 0.05
+  m_GravityScale: 1
+  m_Material: {fileID: 0}
+  m_Interpolate: 0
+  m_SleepingMode: 1
+  m_CollisionDetection: 0
+  m_Constraints: 0
 --- !u!1 &7822177634070988086
 GameObject:
   m_ObjectHideFlags: 0
@@ -560,7 +627,8 @@ GameObject:
   - component: {fileID: 907605525509764865}
   - component: {fileID: 3681368372057283942}
   - component: {fileID: 8797447797862416054}
-  - component: {fileID: 53023880165109136}
+  - component: {fileID: 1562261038065150327}
+  - component: {fileID: 2345710344135279788}
   m_Layer: 0
   m_Name: Block
   m_TagString: Block
@@ -576,8 +644,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 7822177634070988086}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 1.531, y: 0, z: 0}
-  m_LocalScale: {x: 0.38, y: 0.38, z: 0.38}
+  m_LocalPosition: {x: 2, y: 0, z: 0}
+  m_LocalScale: {x: 0.38, y: 0.38, z: 0}
   m_Children: []
   m_Father: {fileID: 7698142975113839150}
   m_RootOrder: 1
@@ -647,7 +715,7 @@ MonoBehaviour:
   m_EffectColor: {r: 0, g: 0, b: 0, a: 0.5}
   m_EffectDistance: {x: 5, y: -1}
   m_UseGraphicAlpha: 1
---- !u!61 &53023880165109136
+--- !u!61 &1562261038065150327
 BoxCollider2D:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -673,3 +741,24 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 2.56, y: 2.56}
   m_EdgeRadius: 0
+--- !u!50 &2345710344135279788
+Rigidbody2D:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7822177634070988086}
+  m_BodyType: 1
+  m_Simulated: 1
+  m_UseFullKinematicContacts: 0
+  m_UseAutoMass: 0
+  m_Mass: 1
+  m_LinearDrag: 0
+  m_AngularDrag: 0.05
+  m_GravityScale: 1
+  m_Material: {fileID: 0}
+  m_Interpolate: 0
+  m_SleepingMode: 1
+  m_CollisionDetection: 0
+  m_Constraints: 0

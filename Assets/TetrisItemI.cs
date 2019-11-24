@@ -4,14 +4,19 @@ using UnityEngine;
 
 public class TetrisItemI : MonoBehaviour
 { 
-    private bool following;
+    protected bool issnapped;
+    public bool following;
+
+    private Grid gridobj;
     private AudioSource clipToPlay;
     public float offset = 0.05f;
     public AudioClip click;
     
-    void Start()
+    void Awake()
     {
         clipToPlay = GetComponent<AudioSource>();
+        issnapped = false;
+        gridobj = FindObjectOfType<Grid>();
         following = false;
         offset += 10;
     }
@@ -21,31 +26,27 @@ public class TetrisItemI : MonoBehaviour
         
         if(Input.GetMouseButtonDown(0) && ((Camera.main.ScreenToWorldPoint(Input.mousePosition) - transform.position).magnitude <= offset))
         {
-            clipToPlay.clip = click;
-            clipToPlay.Play();
             if (following)
             {
                 following = false;
+                issnapped = true;
+                transform.GetChild(0).position = gridobj.GetCellCenterLocal(gridobj.LocalToCell(transform.position));
             }
             else
             {
                 following = true;
+                issnapped = false;
+
             }
+            
         }
-        if (following)
+        if (following & !issnapped)
         {
             foreach(Transform child in transform)
             {
                 child.localScale = new Vector2(1.4f, 1.4f);
             } 
-            transform.position = Vector2.Lerp(transform.position, Camera.main.ScreenToWorldPoint(Input.mousePosition), 0.1f);
+            transform.position = Vector2.MoveTowards(transform.position, Camera.main.ScreenToWorldPoint(Input.mousePosition), 1f);
         }
-        if(Input.GetMouseButtonUp(0))
-        {
-            foreach(Transform child in transform)
-            {
-                child.localScale = new Vector2(1f, 1f);
-            }
-        }   
-    }    
-}
+    }
+}    
