@@ -305,6 +305,7 @@ GameObject:
   - component: {fileID: 4000011939697224}
   - component: {fileID: -5662761031866643935}
   - component: {fileID: 3117016260303501027}
+  - component: {fileID: 5228558712116175086}
   m_Layer: 0
   m_Name: S
   m_TagString: Tetris Item
@@ -320,7 +321,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1000011639141054}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -4.9, y: -7.5, z: 0}
+  m_LocalPosition: {x: 0.01, y: -7.5, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 0}
   m_Children:
   - {fileID: 4000011127452096}
@@ -435,9 +436,37 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6a413e10ee831134a88a2d1af7f9c717, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  issnapped: 0
   following: 0
+  startPosition: {x: 0, y: 0, z: 0}
   offset: 0.05
   click: {fileID: 0}
+--- !u!61 &5228558712116175086
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1000011639141054}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0, y: 0}
+    oldSize: {x: 0, y: 0}
+    newSize: {x: 0, y: 0}
+    adaptiveTilingThreshold: 0
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  serializedVersion: 2
+  m_Size: {x: 1, y: 1}
+  m_EdgeRadius: 0
 --- !u!1 &1000011642839756
 GameObject:
   m_ObjectHideFlags: 0

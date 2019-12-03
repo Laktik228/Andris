@@ -4,11 +4,14 @@ using UnityEngine;
 
 public class TetrisItemI : MonoBehaviour
 { 
-    protected bool issnapped;
+    public bool issnapped;
     public bool following;
 
-    private Grid gridobj;
+    protected Grid gridobj;
+
+    private SpawningTetrisItem pointOfCreation;
     private AudioSource clipToPlay;
+    public Vector3 startPosition;
     public float offset = 0.05f;
     public AudioClip click;
     
@@ -19,6 +22,12 @@ public class TetrisItemI : MonoBehaviour
         gridobj = FindObjectOfType<Grid>();
         following = false;
         offset += 10;
+        pointOfCreation = FindObjectOfType<SpawningTetrisItem>();
+    }
+
+    void Start()
+    {
+        startPosition = transform.position;
     }
   // Update is called once per frame
     void Update () 
@@ -29,14 +38,21 @@ public class TetrisItemI : MonoBehaviour
             if (following)
             {
                 following = false;
+                if(this.tag == "I") 
+                {
+                    transform.GetChild(0).position = gridobj.GetCellCenterLocal(gridobj.LocalToCell(transform.GetChild(0).position));
+                }
+                else
+                {
+                    transform.position = gridobj.GetCellCenterLocal(gridobj.LocalToCell(transform.position));
+                }
                 issnapped = true;
-                transform.GetChild(0).position = gridobj.GetCellCenterLocal(gridobj.LocalToCell(transform.position));
+                pointOfCreation.isspawned = false;
             }
             else
             {
                 following = true;
                 issnapped = false;
-
             }
             
         }

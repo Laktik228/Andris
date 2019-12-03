@@ -6,6 +6,10 @@ TagManager:
   tags:
   - Block
   - Tetris Item
+  - I
+  - SpawnPoint1
+  - SpawnPoint2
+  - SpawnPoint3
   layers:
   - Default
   - TransparentFX
