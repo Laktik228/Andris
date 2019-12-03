@@ -157,7 +157,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1000010735536160}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -4.9, y: -7.5, z: 0}
+  m_LocalPosition: {x: 5, y: -7.5, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 0}
   m_Children:
   - {fileID: 4000010536050500}
@@ -274,7 +274,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   issnapped: 0
   following: 0
-  startPosition: {x: 0, y: 0, z: 0}
   offset: 0.05
   click: {fileID: 0}
 --- !u!61 &6498547567599036002
@@ -284,7 +283,7 @@ BoxCollider2D:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1000010735536160}
-  m_Enabled: 1
+  m_Enabled: 0
   m_Density: 1
   m_Material: {fileID: 0}
   m_IsTrigger: 0

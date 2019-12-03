@@ -6,9 +6,8 @@ public class TetrisItemI : MonoBehaviour
 { 
     public bool issnapped;
     public bool following;
-
     protected Grid gridobj;
-
+    private SpawningTetrisItem[] spawner;
     private AudioSource clipToPlay;
     public float offset = 0.05f;
     public AudioClip click;
@@ -17,6 +16,7 @@ public class TetrisItemI : MonoBehaviour
     {
         clipToPlay = GetComponent<AudioSource>();
         issnapped = false;
+        spawner = FindObjectsOfType<SpawningTetrisItem>();
         gridobj = FindObjectOfType<Grid>();
         following = false;
         offset += 10;

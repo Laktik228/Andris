@@ -290,7 +290,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   issnapped: 0
   following: 0
-  startPosition: {x: 0, y: 0, z: 0}
   offset: 0.05
   click: {fileID: 0}
 --- !u!61 &4988136530457103769
@@ -300,7 +299,7 @@ BoxCollider2D:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 6215874471247991004}
-  m_Enabled: 1
+  m_Enabled: 0
   m_Density: 1
   m_Material: {fileID: 0}
   m_IsTrigger: 0

@@ -12,32 +12,37 @@ public class SpawningTetrisItem : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        SpawningTheFigure();
+        figure = FindObjectOfType<TetrisItemI>();
+    }
+
+   private void OnTriggerExit2D(Collider2D other)
+   {
+        isspawned = false;
+        other.enabled = false;
+   }
+    private void OnTriggerEnter2D(Collider2D other)
+    {
+        isspawned = true;
+    }
+    private void OnTriggerStay2D(Collider2D collision)
+    {
+        isspawned = true;
+    }
+    private void SpawningTheFigure()
+    {
         IndexOfItem = Random.Range(0, tetrisItem.Length);
         tetrisItem[IndexOfItem].transform.position = transform.position;
         Instantiate(tetrisItem[IndexOfItem]);
         isspawned = true;
-        figure = FindObjectOfType<TetrisItemI>();
-    }
-
-    private void OnTriggerExit2D(Collider2D other)
-    {
-        isspawned = false;
     }
 
     // Update is called once per frame
     void Update()
     {
-        if(figure.issnapped){
-            if (!isspawned)
-            {
-                SpawningTheFigure();
-                isspawned = true;
-            }
+        if (!isspawned & figure.issnapped)
+        {
+            SpawningTheFigure();
         }
     }
-    private void SpawningTheFigure(){
-        IndexOfItem = Random.Range(0, tetrisItem.Length);
-        tetrisItem[IndexOfItem].transform.position = transform.position;
-        Instantiate(tetrisItem[IndexOfItem]);
-        }
 }
