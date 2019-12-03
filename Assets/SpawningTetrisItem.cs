@@ -21,48 +21,23 @@ public class SpawningTetrisItem : MonoBehaviour
 
     private void OnTriggerExit2D(Collider2D other)
     {
-        if(figure.issnapped){
-            if(!isspawned){
-                if(this.tag == "SpawnPoint1")
-            {
-                SpawningTheFigure();
-            }
-            else if(this.tag == "SpawnPoint2")
-            {
-                SpawningTheFigure();
-            }
-            else if(this.tag == "SpawnPoint3")
-            {
-                SpawningTheFigure();
-            }
-            }
-        }
+        isspawned = false;
     }
 
     // Update is called once per frame
     void Update()
     {
         if(figure.issnapped){
-            if(!isspawned){
-                if(this.tag == "SpawnPoint1")
+            if (!isspawned)
             {
                 SpawningTheFigure();
-            }
-            else if(this.tag == "SpawnPoint2")
-            {
-                SpawningTheFigure();
-            }
-            else if(this.tag == "SpawnPoint3")
-            {
-                SpawningTheFigure();
-            }
+                isspawned = true;
             }
         }
     }
     private void SpawningTheFigure(){
         IndexOfItem = Random.Range(0, tetrisItem.Length);
-        tetrisItem[IndexOfItem].transform.position = this.transform.position;
+        tetrisItem[IndexOfItem].transform.position = transform.position;
         Instantiate(tetrisItem[IndexOfItem]);
-        isspawned = true;
         }
 }

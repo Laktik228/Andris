@@ -9,9 +9,7 @@ public class TetrisItemI : MonoBehaviour
 
     protected Grid gridobj;
 
-    private SpawningTetrisItem pointOfCreation;
     private AudioSource clipToPlay;
-    public Vector3 startPosition;
     public float offset = 0.05f;
     public AudioClip click;
     
@@ -22,13 +20,8 @@ public class TetrisItemI : MonoBehaviour
         gridobj = FindObjectOfType<Grid>();
         following = false;
         offset += 10;
-        pointOfCreation = FindObjectOfType<SpawningTetrisItem>();
     }
 
-    void Start()
-    {
-        startPosition = transform.position;
-    }
   // Update is called once per frame
     void Update () 
     {
@@ -47,7 +40,6 @@ public class TetrisItemI : MonoBehaviour
                     transform.position = gridobj.GetCellCenterLocal(gridobj.LocalToCell(transform.position));
                 }
                 issnapped = true;
-                pointOfCreation.isspawned = false;
             }
             else
             {
